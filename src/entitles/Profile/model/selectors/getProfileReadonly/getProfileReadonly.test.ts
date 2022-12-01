@@ -1,0 +1,22 @@
+/* eslint-disable no-undef */
+import { StateSchema } from 'app/providers/StoreProvider';
+import { Country } from 'entitles/Country';
+import { Currency } from 'entitles/Currency';
+import { getProfileReadonly } from './getProfileReadonly';
+
+describe('getProfileReadonly.test', () => {
+    test('should return true', () => {
+        const state: DeepPartial<StateSchema> = {
+            profile: {
+                readonly: true,
+
+            },
+        };
+        expect(getProfileReadonly(state as StateSchema)).toEqual(true);
+    });
+
+    test('should return true', () => {
+        const state: DeepPartial<StateSchema> = {};
+        expect(getProfileReadonly(state as StateSchema)).toEqual(undefined);
+    });
+});

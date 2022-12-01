@@ -1,0 +1,13 @@
+import { classNames } from 'shared/lib/classNames/classNames';
+import { FC, memo } from 'react';
+import cls from './Button.module.scss';
+
+interface ButtonProps {
+    className?: string;
+}
+
+export const Button = memo((props: ButtonProps) => {
+    const { className } = props;
+
+    return <div className={classNames(cls.Button, {}, [className])}>props</div>;
+});
