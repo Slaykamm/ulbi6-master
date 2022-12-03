@@ -1,8 +1,7 @@
-import { createSlice, Draft, PayloadAction } from '@reduxjs/toolkit';
-import { updateProfileData } from 'entitles/Profile';
-import { USER_LOCALSTORAGE_KEY } from 'shared/const/localStorage';
-import { fetchProfileData } from '../services/fetchProfileData/fetchProfileData';
-import { Profile, ProfileSchema } from '../types/profile';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { Profile } from 'entitles/Profile';
+import { fetchProfileData, updateProfileData } from '../../../editableProfileCard';
+import { ProfileSchema } from '../../model/types/editableProfileCardSchema';
 
 const initialState: ProfileSchema = {
     isLoading: false,

@@ -9,10 +9,10 @@ import {
 import { AxiosInstance } from 'axios';
 import { ArticleDetailsSchema } from 'entitles/Article';
 import { CounterSchema } from 'entitles/Counter';
-import { ProfileSchema } from 'entitles/Profile';
 import { UserSchema } from 'entitles/User';
 import { AddCommentFormSchema } from 'features/addCommentForm';
 import { LoginSchema } from 'features/AuthByUsername';
+import { ProfileSchema } from 'features/editableProfileCard';
 import { UISchema } from 'features/UI';
 import {
     ArticleDetailsPageCommentsRecomendationsSchema,
@@ -20,11 +20,13 @@ import {
     ArticleDetailsPageSchema,
 } from 'pages/ArticleDetailsPage';
 import { articlePageSchema } from 'pages/ArticlesPage';
+import { rtkApi } from 'shared/api/rtkApi';
 
 export interface StateSchema {
     counter: CounterSchema;
     user: UserSchema;
     ui: UISchema;
+    [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>;
 
     // Async reducers
     loginForm?: LoginSchema;

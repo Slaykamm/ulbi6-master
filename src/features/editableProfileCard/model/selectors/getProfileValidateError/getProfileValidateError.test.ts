@@ -2,7 +2,7 @@
 import { StateSchema } from 'app/providers/StoreProvider';
 import { Country } from 'entitles/Country';
 import { Currency } from 'entitles/Currency';
-import { ValidateProfileError } from '../../types/profile';
+import { ValidateProfileError } from '../../types/editableProfileCardSchema';
 import { getProfileValidateError } from './getProfileValidateError';
 
 describe('getProfileValidateError.test', () => {
