@@ -7,7 +7,6 @@ import { Country } from 'entitles/Country';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { useSelector } from 'react-redux';
 import { useAppDidpatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { useParams } from 'react-router-dom';
 import { ProfileCard } from 'entitles/Profile';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { VStack } from 'shared/ui/Stack';
@@ -19,7 +18,6 @@ import {
     getProfileValidateError,
     ValidateProfileError,
 } from '../../../editableProfileCard';
-import cls from './EditableProfileCard.module.scss';
 import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData';
 import { profileActions, profileReducer } from '../../model/slice/ProfileSlice';
 import { EditableProfileCardHeader } from '../EditableProfileCardHeader/EditableProfileCardHeader';
@@ -131,7 +129,7 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
         <DynamicModuleLoader reducers={reducers}>
             <VStack
                 gap="8"
-                className={classNames(cls.EditableProfileCard, {}, [className])}
+                className={classNames('', {}, [className])}
                 max
             >
                 <EditableProfileCardHeader />

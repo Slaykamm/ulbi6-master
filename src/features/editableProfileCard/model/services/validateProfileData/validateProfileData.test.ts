@@ -1,7 +1,5 @@
 import { Country } from 'entitles/Country';
 import { Currency } from 'entitles/Currency';
-import { userActions } from 'entitles/User';
-import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 import { ValidateProfileError } from '../../types/editableProfileCardSchema';
 import { validateProfileData } from './validateProfileData';
 
