@@ -1,11 +1,13 @@
 import { fireEvent, screen } from '@testing-library/react';
 import { componentRender } from 'shared/lib/tests/componentRender/componentRender';
-import { Profile } from 'entities/Profile';
-import { Currency } from 'entities/Currency';
-import { Country } from 'entities/Country';
 import userEvent from '@testing-library/user-event';
 import { $api } from 'shared/api/api';
-import { profileReducer } from '../../model/slice/profileSlice';
+import { Currency } from 'entitles/Currency';
+import { Profile } from 'entitles/Profile';
+import { Country } from 'entitles/Country';
+import { profileReducer } from '../../model/slice/ProfileSlice';
+// src/features/editableProfileCard/ui/EditableProfileCard/EditableProfileCard.te2st.tsx
+// src/features/editableProfileCard/model/slice/ProfileSlice.ts
 import { EditableProfileCard } from './EditableProfileCard';
 
 const profile: Profile = {
@@ -14,7 +16,7 @@ const profile: Profile = {
     lastname: 'admin',
     age: 465,
     currency: Currency.USD,
-    country: Country.Kazakhstan,
+    country: Country.Kazahstan,
     city: 'Moscow',
     username: 'admin213',
 };

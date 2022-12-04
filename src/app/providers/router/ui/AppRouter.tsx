@@ -1,9 +1,8 @@
-import { getUserAuthData } from 'entitles/User';
-import React, { memo, Suspense, useCallback, useMemo } from 'react';
-import { useSelector } from 'react-redux';
+import {
+    memo, Suspense, useCallback,
+} from 'react';
 import { Route, Routes } from 'react-router-dom';
 import {
-    AppRoutes,
     AppRoutesProps,
     routeConfig,
 } from 'shared/config/routeConfig/routeConfig';
@@ -22,7 +21,7 @@ const AppRouter = () => {
                 path={route.path}
                 element={
                     route.authOnly ? (
-                        <RequireAuth>{element}</RequireAuth>
+                        <RequireAuth roles={route.roles}>{element}</RequireAuth>
                     ) : (
                         element
                     )
