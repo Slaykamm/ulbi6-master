@@ -5,9 +5,9 @@ import { Text } from 'shared/ui/Text/Text';
 import { Skeleton } from 'shared/ui/Skeleton';
 import { AppLink } from 'shared/ui/AppLink/AppLink';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { VStack } from 'shared/ui/Stack';
 import cls from './CommentCard.module.scss';
 import { Comment } from '../../model/types/comment';
-import { VStack } from 'shared/ui/Stack';
 
 interface CommentCardProps {
     className?: string;
@@ -26,14 +26,14 @@ export const CommentCard = memo((props: CommentCardProps) => {
                     cls.loading,
                 ])}
             >
-                <div className={cls.heander}>
+                <VStack gap="16" className={cls.heander}>
                     <Skeleton width={30} height={30} border="50%" />
                     <Skeleton
                         height={16}
                         width={100}
                         className={cls.username}
                     />
-                </div>
+                </VStack>
                 <Skeleton width="100%" height={50} className={cls.text} />
             </div>
         );
