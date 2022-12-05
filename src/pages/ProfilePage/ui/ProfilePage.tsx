@@ -18,9 +18,6 @@ export const ProfilePage = (props: ProfilePageProps) => {
     const { id } = useParams<{id: string}>();
     const { t } = useTranslation('profile');
 
-    if (!id) {
-        return <Text text={t('Данный профиль отсутствует в базе данных')} />;
-    }
 
     return (
         <Page className={classNames('', {}, [className])}>
