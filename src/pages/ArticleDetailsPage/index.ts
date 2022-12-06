@@ -2,7 +2,7 @@ import { ArticleDetailsPageAsync } from './ui/ArticleDetailsPage/ArticleDetailsP
 
 export { ArticleDetailsPageAsync as ArticleDetailsPage };
 
-export { ArticleDetailsPageCommentsSchema } from './model/types/ArticleDetailsPageCommentsSchema';
+export type { ArticleDetailsPageCommentsSchema } from './model/types/ArticleDetailsPageCommentsSchema';
 // eslint-disable-next-line max-len
-export { ArticleDetailsPageCommentsRecomendationsSchema } from './model/types/ArticleDetailsPageCommentsRecomendationsSchema';
-export { ArticleDetailsPageSchema } from './model/types';
+export type { ArticleDetailsPageCommentsRecomendationsSchema } from './model/types/ArticleDetailsPageCommentsRecomendationsSchema';
+export type { ArticleDetailsPageSchema } from './model/types';

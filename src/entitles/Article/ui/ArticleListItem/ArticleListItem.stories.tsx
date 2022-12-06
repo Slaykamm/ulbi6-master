@@ -1,12 +1,6 @@
-import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { ArticleView } from 'entitles/Article';
 
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from 'app/providers/ThemeProvider';
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
-import {
-    Article, ArticleBlockType, ArticleType, ArticleView,
-} from 'entitles/Article/model/types/article';
 import { ArticleListItem } from './ArticleListItem';
 
 export default {
