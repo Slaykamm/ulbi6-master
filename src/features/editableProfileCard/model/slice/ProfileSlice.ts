@@ -1,7 +1,8 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { Profile } from 'entitles/Profile';
-import { fetchProfileData, updateProfileData } from '../../../editableProfileCard';
 import { ProfileSchema } from '../../model/types/editableProfileCardSchema';
+import { fetchProfileData } from '../services/fetchProfileData/fetchProfileData';
+import { updateProfileData } from '../services/updateProfileData/updateProfileData';
 
 const initialState: ProfileSchema = {
     isLoading: false,

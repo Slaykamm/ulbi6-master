@@ -10,17 +10,23 @@ import { useAppDidpatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { ProfileCard } from 'entitles/Profile';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { VStack } from 'shared/ui/Stack';
-import {
-    getProfileError,
-    getProfileForm,
-    getProfileIsLoading,
-    getProfileReadonly,
-    getProfileValidateError,
-    ValidateProfileError,
-} from '../../../editableProfileCard';
+// import {
+//     getProfileError,
+//     getProfileForm,
+//     getProfileIsLoading,
+//     getProfileReadonly,
+//     getProfileValidateError,
+//     ValidateProfileError,
+// } from '../../../editableProfileCard';
 import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData';
 import { profileActions, profileReducer } from '../../model/slice/ProfileSlice';
 import { EditableProfileCardHeader } from '../EditableProfileCardHeader/EditableProfileCardHeader';
+import { ValidateProfileError } from 'features/editableProfileCard/model/types/editableProfileCardSchema';
+import { getProfileForm } from 'features/editableProfileCard/model/selectors/getProfileForm/getProfileForm';
+import { getProfileError } from 'features/editableProfileCard/model/selectors/getProfileError/getProfileError';
+import { getProfileReadonly } from 'features/editableProfileCard/model/selectors/getProfileReadonly/getProfileReadonly';
+import { getProfileIsLoading } from 'features/editableProfileCard/model/selectors/getProfileIsLoading/getProfileIsLoading';
+import { getProfileValidateError } from 'features/editableProfileCard/model/selectors/getProfileValidateError/getProfileValidateError';
 
 interface EditableProfileCardProps {
     className?: string;
