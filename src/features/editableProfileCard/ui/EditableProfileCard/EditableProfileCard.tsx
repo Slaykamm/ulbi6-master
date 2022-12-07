@@ -39,8 +39,8 @@ const reducers: ReducersList = {
 
 export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
     const {
-        className,
         id,
+        className,
     } = props;
     const { t } = useTranslation('profile');
 
