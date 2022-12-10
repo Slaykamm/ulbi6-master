@@ -3,9 +3,9 @@ import {
     createSlice,
     PayloadAction,
 } from '@reduxjs/toolkit';
-import { StateSchema } from 'app/providers/StoreProvider';
-import { Article } from 'entitles/Article';
-import { Comment } from 'entitles/Comment';
+import { StateSchema } from '@/app/providers/StoreProvider';
+import { Article } from '@/entitles/Article';
+import { Comment } from '@/entitles/Comment';
 import { fetchArticleRecommendations } from '../services/fetchArticleRecommendations/fetchArticleRecommendations';
 import { fetchCommentsByArticleId } from '../services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 // eslint-disable-next-line max-len

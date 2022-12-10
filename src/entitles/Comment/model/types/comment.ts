@@ -1,4 +1,4 @@
-import { User } from 'entitles/User';
+import { User } from '@/entitles/User';
 
 export interface Comment {
     id: string;

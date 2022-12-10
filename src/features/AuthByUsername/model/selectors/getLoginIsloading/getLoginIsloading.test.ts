@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-import { StateSchema } from 'app/providers/StoreProvider';
+import { StateSchema } from '@/app/providers/StoreProvider';
 import { getLoginIsloading } from './getLoginIsloading';
 
 describe('getLoginError.test', () => {

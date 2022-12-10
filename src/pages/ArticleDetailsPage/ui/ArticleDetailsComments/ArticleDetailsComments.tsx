@@ -1,12 +1,12 @@
-import { CommentList } from 'entitles/Comment';
-import { AddCommentForm } from 'features/addCommentForm';
+import { CommentList } from '@/entitles/Comment';
+import { AddCommentForm } from '@/features/addCommentForm';
 import { memo, Suspense, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { Text, TextSize } from 'shared/ui/Text/Text';
-import { VStack } from 'shared/ui/Stack';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { Text, TextSize } from '@/shared/ui/Text/Text';
+import { VStack } from '@/shared/ui/Stack';
 import {
     fetchCommentsByArticleId,
 } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
@@ -15,7 +15,7 @@ import {
     addCommentForArticle,
 } from '../../model/services/fetchCommentsByArticleId/addCommentForArticle/addCommentForArticle';
 import { getArticleComments } from '../../model/slices/ArticleDetailsCommentsSlice';
-import { Loader } from 'shared/ui/Loader/Loader';
+import { Loader } from '@/shared/ui/Loader/Loader';
 
 interface ArticleDetailsCommentsProps {
    className?: string;

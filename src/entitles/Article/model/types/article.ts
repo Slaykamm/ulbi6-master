@@ -1,4 +1,4 @@
-import { User } from 'entitles/User';
+import { User } from '@/entitles/User';
 import { ArticleType } from '../consts/articleConsts';
 
 export enum ArticleBlockType {
