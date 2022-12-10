@@ -17,6 +17,8 @@ import cls from './Navbar.module.scss';
 import { NotificationButton } from 'features/NotificationButton';
 import { Dropdown } from 'shared/ui/Popups/ui/Dropdown/Dropdown';
 import { AvatarDropdown } from 'features/avatarDropdown';
+import { Drawer } from 'shared/ui/Drawer/Drawer';
+import { NotificationList } from 'entitles/Notification';
 
 interface NavbarProps {
     className?: string;
@@ -36,6 +38,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
         setIsAuthModal(true);
     }, []);
 
+
     if (authData) {
         return (
             <header className={classNames(cls.Navbar, {}, [className])}>
@@ -52,6 +55,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                     {t('Создать статью')}
                 </AppLink>
                 <HStack gap={"16"} className={cls.actions}>
+
                     <NotificationButton />
                     <AvatarDropdown />
                 </HStack>
