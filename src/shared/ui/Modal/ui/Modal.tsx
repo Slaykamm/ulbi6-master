@@ -8,6 +8,7 @@ import { Overlay } from 'shared/ui/Overlay/Overlay';
 import { Portal } from '../../Portal/Portal';
 import cls from './Modal.module.scss';
 
+
 export interface ModalProps {
     className?: string;
     children?: ReactNode;
