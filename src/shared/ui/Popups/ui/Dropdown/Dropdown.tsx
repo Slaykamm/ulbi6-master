@@ -8,10 +8,10 @@ import cls from './Dropdown.module.scss';
 import popupCls from '../../styles/popup.module.scss';
 
 export interface DropdownItem {
-   disabled?: boolean;
-   content?: ReactNode;
-   onClick?: () => void;
-   href?: string;
+    disabled?: boolean;
+    content?: ReactNode;
+    onClick?: () => void;
+    href?: string;
 
 }
 
@@ -38,8 +38,8 @@ export function Dropdown(props: DropdownProps) {
                 {trigger}
             </Menu.Button>
             <Menu.Items className={classNames(cls.menu, {}, menuClasses)}>
-                {items?.map((item) => {
-                    const content = ({ active }: {active: boolean}) => (
+                {items?.map((item, index) => {
+                    const content = ({ active }: { active: boolean }) => (
                         <button
                             className={classNames(
                                 cls.item,
@@ -56,14 +56,23 @@ export function Dropdown(props: DropdownProps) {
 
                     if (item.href) {
                         return (
-                            <Menu.Item as={AppLink} to={item.href} disabled={item.disabled}>
+                            <Menu.Item
+                                as={AppLink}
+                                to={item.href}
+                                disabled={item.disabled}
+                                key={'drpdwn-key' + index}
+                            >
                                 {content}
                             </Menu.Item>
                         );
                     }
 
                     return (
-                        <Menu.Item as={Fragment} disabled={item.disabled}>
+                        <Menu.Item
+                            as={Fragment}
+                            disabled={item.disabled}
+                            key={'drpdwn-key' + index}
+                        >
                             {content}
                         </Menu.Item>
                     );
