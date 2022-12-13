@@ -564,24 +564,29 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "roles": ["ADMIN"],
+      "roles": [
+        "ADMIN"
+      ],
       "avatar": "https://otkritkis.com/wp-content/uploads/2022/02/qf12_cat_800x600-730x548-1.jpg"
     },
     {
       "id": "2",
       "username": "user2",
       "password": "123",
-      "roles": ["USER"],
+      "roles": [
+        "USER"
+      ],
       "avatar": "https://www.pngmart.com/files/12/Hello-Summer-Word-Transparent-Background.png"
     },
     {
       "id": "3",
       "username": "manager",
       "password": "123",
-      "roles": ["MANAGER"],
+      "roles": [
+        "MANAGER"
+      ],
       "avatar": "https://fresh.acit-c.ru/templates/yootheme/cache/manager-7c762b12.jpeg"
     }
-    
   ],
   "profile": [
     {
@@ -605,6 +610,45 @@
       "city": "Saint-Petersburg",
       "username": "aaaa",
       "avatar": "https://www.pngmart.com/files/12/Hello-Summer-Word-Transparent-Background.png"
+    }
+  ],
+  "article-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "отзыв на статью",
+      "userId": "1",
+      "articleId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 4,
+      "feedback": "отзыв на статью",
+      "userId": "1",
+      "articleId": "2"
+    },
+    {
+      "userId": "1",
+      "articleId": "8",
+      "rate": 4,
+      "feedback": "1111",
+      "id": "c4nU6x9"
+    }
+  ],
+  "profile-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "отзыв на статью",
+      "userId": "1",
+      "profileId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 4,
+      "feedback": "отзыв на статью",
+      "userId": "1",
+      "profileId": "2"
     }
   ]
 }
