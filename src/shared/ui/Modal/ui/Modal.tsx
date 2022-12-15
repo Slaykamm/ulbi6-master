@@ -1,13 +1,12 @@
-import { useTheme } from '@/app/providers/ThemeProvider';
 import {
-    ReactNode
+    ReactNode,
 } from 'react';
+import { useTheme } from '@/app/providers/ThemeProvider';
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import { useModal } from '@/shared/lib/hooks/useModal/useModal';
 import { Overlay } from '@/shared/ui/Overlay/Overlay';
 import { Portal } from '../../Portal/Portal';
 import cls from './Modal.module.scss';
-
 
 export interface ModalProps {
     className?: string;
@@ -31,8 +30,6 @@ export const Modal = (props: ModalProps) => {
     });
 
     const { theme } = useTheme();
-
-
 
     const mods: Mods = {
         [cls.opened]: isOpen,

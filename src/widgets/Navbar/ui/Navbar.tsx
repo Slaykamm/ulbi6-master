@@ -1,10 +1,10 @@
-import {
-    getUserAuthData, isUserAdmin, isUserManager, userActions
-} from '@/entitles/User';
-import { LoginModal } from '@/features/AuthByUsername';
 import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
+import { LoginModal } from '@/features/AuthByUsername';
+import {
+    getUserAuthData, isUserAdmin, isUserManager, userActions,
+} from '@/entitles/User';
 import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink/AppLink';
@@ -29,7 +29,6 @@ export const Navbar = memo(({ className }: NavbarProps) => {
     const [isAuthModal, setIsAuthModal] = useState(false);
     const authData = useSelector(getUserAuthData);
 
-
     const onCloseModal = useCallback(() => {
         setIsAuthModal(false);
     }, []);
@@ -37,7 +36,6 @@ export const Navbar = memo(({ className }: NavbarProps) => {
     const onShowModal = useCallback(() => {
         setIsAuthModal(true);
     }, []);
-
 
     if (authData) {
         return (
@@ -54,7 +52,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                 >
                     {t('Создать статью')}
                 </AppLink>
-                <HStack gap={"16"} className={cls.actions}>
+                <HStack gap="16" className={cls.actions}>
 
                     <NotificationButton />
                     <AvatarDropdown />

@@ -2,7 +2,7 @@ import { memo, useCallback } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDidpatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { Page } from '@/widgets/Page/Page';
+import { Page } from '@/widgets/Page';
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import { articlesPageReducer } from '../../model/slice/articlesPageSlice';
 import { ArticleInfiniteList } from '../ArticleInfiniteList/ArticleInfiniteList';
@@ -10,7 +10,7 @@ import { ArticlesPageFilter } from '../ArticlesPageFilter/ArticlesPageFilter';
 import cls from './ArticlesPage.module.scss';
 
 interface ArticlesPageProps {
-   className?: string;
+    className?: string;
 }
 
 const reducers: ReducersList = {

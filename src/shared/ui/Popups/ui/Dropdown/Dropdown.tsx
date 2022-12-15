@@ -22,7 +22,6 @@ interface DropdownProps {
     direction?: DropdownDirection;
 }
 
-
 export function Dropdown(props: DropdownProps) {
     const {
         className,
@@ -60,7 +59,7 @@ export function Dropdown(props: DropdownProps) {
                                 as={AppLink}
                                 to={item.href}
                                 disabled={item.disabled}
-                                key={'drpdwn-key' + index}
+                                key={`drpdwn-key${index}`}
                             >
                                 {content}
                             </Menu.Item>
@@ -71,7 +70,7 @@ export function Dropdown(props: DropdownProps) {
                         <Menu.Item
                             as={Fragment}
                             disabled={item.disabled}
-                            key={'drpdwn-key' + index}
+                            key={`drpdwn-key${index}`}
                         >
                             {content}
                         </Menu.Item>

@@ -1,8 +1,8 @@
 import { useTranslation } from 'react-i18next';
 import { FC, ReactNode, useEffect } from 'react';
 import { useDispatch, useStore } from 'react-redux';
-import { ReduxStoreWIthManager, StateSchemaKey } from '@/app/providers/StoreProvider/config/StateSchema';
 import { Reducer } from '@reduxjs/toolkit';
+import { ReduxStoreWIthManager, StateSchemaKey } from '@/app/providers/StoreProvider/config/StateSchema';
 
 export type ReducersList = {
     [name in StateSchemaKey]?: Reducer;
@@ -14,7 +14,7 @@ interface DynamicModuleLoaderProps {
     children: ReactNode;
 }
 
-export const DynamicModuleLoader= (props: DynamicModuleLoaderProps) => {
+export const DynamicModuleLoader = (props: DynamicModuleLoaderProps) => {
     const {
         children, reducers, removeAfterUnmount = true,
     } = props;

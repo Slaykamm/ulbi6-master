@@ -1,11 +1,11 @@
-import { classNames } from '@/shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
+import { useSelector } from 'react-redux';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { Currency } from '@/entitles/Currency';
 import { Country } from '@/entitles/Country';
 import { Text, TextTheme } from '@/shared/ui/Text/Text';
-import { useSelector } from 'react-redux';
 import { useAppDidpatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { ProfileCard } from '@/entitles/Profile';
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
@@ -21,12 +21,20 @@ import { VStack } from '@/shared/ui/Stack';
 import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData';
 import { profileActions, profileReducer } from '../../model/slice/ProfileSlice';
 import { EditableProfileCardHeader } from '../EditableProfileCardHeader/EditableProfileCardHeader';
-import { ValidateProfileError } from '@/features/editableProfileCard/model/types/editableProfileCardSchema';
-import { getProfileForm } from '@/features/editableProfileCard/model/selectors/getProfileForm/getProfileForm';
-import { getProfileError } from '@/features/editableProfileCard/model/selectors/getProfileError/getProfileError';
-import { getProfileReadonly } from '@/features/editableProfileCard/model/selectors/getProfileReadonly/getProfileReadonly';
-import { getProfileIsLoading } from '@/features/editableProfileCard/model/selectors/getProfileIsLoading/getProfileIsLoading';
-import { getProfileValidateError } from '@/features/editableProfileCard/model/selectors/getProfileValidateError/getProfileValidateError';
+import {
+    getProfileError,
+    getProfileForm,
+    getProfileIsLoading,
+    getProfileReadonly,
+    getProfileValidateError,
+    ValidateProfileError,
+} from '../..';
+// import { ValidateProfileError } from '@/features/editableProfileCard/model/types/editableProfileCardSchema';
+// import { getProfileForm } from '@/features/editableProfileCard/model/selectors/getProfileForm/getProfileForm';
+// import { getProfileError } from '@/features/editableProfileCard/model/selectors/getProfileError/getProfileError';
+// import { getProfileReadonly } from '@/features/editableProfileCard/model/selectors/getProfileReadonly/getProfileReadonly';
+// import { getProfileIsLoading } from '@/features/editableProfileCard/model/selectors/getProfileIsLoading/getProfileIsLoading';
+// import { getProfileValidateError } from '@/features/editableProfileCard/model/selectors/getProfileValidateError/getProfileValidateError';
 
 interface EditableProfileCardProps {
     className?: string;
@@ -140,14 +148,14 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
             >
                 <EditableProfileCardHeader />
                 {validateErrors?.length
-                        && validateErrors.map((err) => (
-                            <Text
-                                key={err}
-                                theme={TextTheme.ERROR}
-                                text={validateErrorTranslations[err]}
-                                data-testid="EditableProfileCard.Error"
-                            />
-                        ))}
+                    && validateErrors.map((err) => (
+                        <Text
+                            key={err}
+                            theme={TextTheme.ERROR}
+                            text={validateErrorTranslations[err]}
+                            data-testid="EditableProfileCard.Error"
+                        />
+                    ))}
                 <ProfileCard
                     data={formData}
                     error={error}

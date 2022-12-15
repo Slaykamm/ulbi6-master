@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
 import { User, userActions } from '@/entitles/User';
 import { USER_LOCALSTORAGE_KEY } from '@/shared/const/localStorage';
-import axios from 'axios';
 import { ThunkConfig } from '@/app/providers/StoreProvider';
 import { Comment } from '@/entitles/Comment';
 

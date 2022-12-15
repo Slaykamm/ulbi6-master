@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { Counter } from '@/entitles/Counter';
 import { Input } from '@/shared/ui/Input/Input';
 import { HStack } from '@/shared/ui/Stack';
-import { Page } from '@/widgets/Page/Page';
+import { Page } from '@/widgets/Page';
 import { StarRating } from '@/shared/ui/StarRating/StarRating';
 import { RatingCard } from '@/entitles/Rating';
 

@@ -9,4 +9,4 @@ export {
 
 export type {
     CounterSchema,
-}
+};

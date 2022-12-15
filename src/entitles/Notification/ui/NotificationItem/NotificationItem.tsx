@@ -1,7 +1,7 @@
+import { useTranslation } from 'react-i18next';
+import { memo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './NotificationItem.module.scss';
-import { useTranslation } from 'react-i18next';
-import { memo } from 'react'
 import { Notification } from '../../model/types/notifications';
 import { Card, CardTheme } from '@/shared/ui/Card/Card';
 import { Text } from '@/shared/ui/Text/Text';
@@ -12,11 +12,10 @@ interface NotificationItemProps {
 }
 
 export const NotificationItem = memo((props: NotificationItemProps) => {
-
     const {
         className,
         item,
-    } = props
+    } = props;
 
     const { t } = useTranslation();
 
@@ -27,14 +26,14 @@ export const NotificationItem = memo((props: NotificationItemProps) => {
         >
             <Text title={item.title} text={item.description} />
         </Card>
-    )
+    );
 
     if (item.href) {
         return (
-            <a className={cls.link} target={"_blank"} href={item.href}>
+            <a className={cls.link} target="_blank" href={item.href} rel="noreferrer">
                 {content}
             </a>
-        )
+        );
     }
-    return content
-})
+    return content;
+});

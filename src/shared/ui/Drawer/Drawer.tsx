@@ -1,7 +1,9 @@
+import { useTranslation } from 'react-i18next';
+import {
+    memo, ReactNode, useCallback, useEffect,
+} from 'react';
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import cls from './Drawer.module.scss';
-import { useTranslation } from 'react-i18next';
-import { memo, ReactNode, useCallback, useEffect } from 'react'
 import { useTheme } from '@/app/providers/ThemeProvider';
 import { Portal } from '../Portal/Portal';
 import { Overlay } from '../Overlay/Overlay';
@@ -20,26 +22,26 @@ interface DrawerProps {
 const height = window.innerHeight - 100;
 
 export const DrawerContent = memo((props: DrawerProps) => {
-    const {Spring, Gesture} = useAnimationLibs();
+    const { Spring, Gesture } = useAnimationLibs();
     const { theme } = useTheme();
-    const [{ y }, api] = Spring.useSpring(() => ({ y: height }))
+    const [{ y }, api] = Spring.useSpring(() => ({ y: height }));
     const {
         className,
         children,
         onClose,
         isOpen,
         lazy,
-    } = props
+    } = props;
 
     const openDrawer = useCallback(() => {
         api.start({ y: 0, immediate: false });
-    }, [api])
+    }, [api]);
 
     useEffect(() => {
         if (isOpen) {
             openDrawer();
         }
-    }, [api, isOpen, openDrawer])
+    }, [api, isOpen, openDrawer]);
 
     const close = (velocity = 0) => {
         api.start({
@@ -53,13 +55,13 @@ export const DrawerContent = memo((props: DrawerProps) => {
             velocity: [, vy],
             direction: [, dy],
             movement: [, my],
-            cancel
+            cancel,
         }) => {
             if (my < -70) cancel();
 
             if (last) {
                 if (my > height * 0.5 || (vy > 0.5 && dy > 0)) {
-                    close()
+                    close();
                 } else {
                     openDrawer();
                 }
@@ -75,7 +77,7 @@ export const DrawerContent = memo((props: DrawerProps) => {
     if (!isOpen) {
         return null;
     }
-    const display = y.to((py) => (py < height ? 'block' : 'none'))
+    const display = y.to((py) => (py < height ? 'block' : 'none'));
 
     return (
         <Portal>
@@ -90,18 +92,17 @@ export const DrawerContent = memo((props: DrawerProps) => {
                 </Spring.a.div>
             </div>
         </Portal>
-    )
-})
-
+    );
+});
 
 const DrawerAsync = (props: DrawerProps) => {
-    const {isLoaded} = useAnimationLibs();
+    const { isLoaded } = useAnimationLibs();
 
     if (!isLoaded) {
         return null;
     }
 
-    return <DrawerContent {...props} />
+    return <DrawerContent {...props} />;
 };
 
 export const Drawer = (props: DrawerProps) => {
@@ -109,5 +110,5 @@ export const Drawer = (props: DrawerProps) => {
         <AnimationProvider>
             <DrawerAsync {...props} />
         </AnimationProvider>
-    )
+    );
 };

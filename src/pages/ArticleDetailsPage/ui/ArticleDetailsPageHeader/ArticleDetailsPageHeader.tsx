@@ -1,12 +1,12 @@
+import { memo, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { getArticleDetailsData } from '@/entitles/Article';
 import { getUserAuthData } from '@/entitles/User';
 import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { memo, useCallback } from 'react';
-import { useTranslation } from 'react-i18next';
 import { HStack } from '@/shared/ui/Stack';
-import { useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
 import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
 import { getCanEditArticle } from '../../model/selectors/article';
 
@@ -46,5 +46,5 @@ export const ArticleDetailsPageHeader = memo(
                 )}
             </HStack>
         );
-    }
+    },
 );

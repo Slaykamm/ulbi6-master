@@ -13,13 +13,13 @@ import { Button, ButtonSize, ButtonTheme } from '@/shared/ui/Button/Button';
 import { Drawer } from '@/shared/ui/Drawer/Drawer';
 
 interface RatingCardProps {
-   className?: string;
-   title?: string;
-   feedbackTitle?: string;
-   hasFeedback?: boolean;
-   onCancel?: (starsCount: number) => void;
-   onAccept?: (starsCount: number, feedback?: string) => void;
-   rate?: number;
+    className?: string;
+    title?: string;
+    feedbackTitle?: string;
+    hasFeedback?: boolean;
+    onCancel?: (starsCount: number) => void;
+    onAccept?: (starsCount: number, feedback?: string) => void;
+    rate?: number;
 }
 
 export const RatingCard = memo((props: RatingCardProps) => {

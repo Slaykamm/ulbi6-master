@@ -1,6 +1,6 @@
 import { fireEvent, screen } from '@testing-library/react';
-import { componentRender } from '@/shared/lib/tests/componentRender/componentRender';
 import userEvent from '@testing-library/user-event';
+import { componentRender } from '@/shared/lib/tests/componentRender/componentRender';
 import { $api } from '@/shared/api/api';
 import { Currency } from '@/entitles/Currency';
 import { Profile } from '@/entitles/Profile';

@@ -1,8 +1,8 @@
-import { CommentList } from '@/entitles/Comment';
-import { AddCommentForm } from '@/features/addCommentForm';
 import { memo, Suspense, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
+import { AddCommentForm } from '@/features/addCommentForm';
+import { CommentList } from '@/entitles/Comment';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { Text, TextSize } from '@/shared/ui/Text/Text';

@@ -3,7 +3,7 @@ import { StateSchema } from '@/app/providers/StoreProvider';
 import { Country } from '@/entitles/Country';
 import { Currency } from '@/entitles/Currency';
 import { Article, ArticleBlockType } from '../types/article';
-import { ArticleType } from "../consts/articleConsts";
+import { ArticleType } from '../consts/articleConsts';
 import { getArticleDetailsData, getArticleDetailsError, getArticleDetailsIsLoading } from './articleDetails';
 
 describe('getArticleDetailsData.test', () => {

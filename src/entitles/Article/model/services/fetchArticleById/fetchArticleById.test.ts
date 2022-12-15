@@ -3,7 +3,7 @@ import { Currency } from '@/entitles/Currency';
 import { userActions } from '@/entitles/User';
 import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 import { Article, ArticleBlockType } from '../../types/article';
-import { ArticleType } from "../../consts/articleConsts";
+import { ArticleType } from '../../consts/articleConsts';
 import { fetchArticleById } from './fetchArticleById';
 
 const article: Article = {

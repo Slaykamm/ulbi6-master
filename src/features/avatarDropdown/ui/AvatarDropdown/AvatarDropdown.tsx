@@ -1,22 +1,23 @@
+import { useTranslation } from 'react-i18next';
+import { memo, useCallback } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './AvatarDropdown.module.scss';
-import { useTranslation } from 'react-i18next';
-import { memo, useCallback } from 'react'
 import { Dropdown } from '@/shared/ui/Popups';
 import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
 import { Avatar } from '@/shared/ui/Avatar/Avatar';
-import { useDispatch, useSelector } from 'react-redux';
-import { getUserAuthData, isUserAdmin, isUserManager, userActions } from '@/entitles/User';
+import {
+    getUserAuthData, isUserAdmin, isUserManager, userActions,
+} from '@/entitles/User';
 
 interface AvatarDropdownProps {
     className?: string;
 }
 
 export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
-
     const {
         className,
-    } = props
+    } = props;
 
     const dispatch = useDispatch();
     const isAdmin = useSelector(isUserAdmin);
@@ -53,5 +54,5 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
             ]}
             trigger={<Avatar size={30} src={authData.avatar} />}
         />
-    )
-})
+    );
+});

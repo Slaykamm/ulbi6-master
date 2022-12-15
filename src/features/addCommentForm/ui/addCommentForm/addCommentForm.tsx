@@ -1,9 +1,9 @@
-import { classNames } from '@/shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
+import { useSelector } from 'react-redux';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { Input } from '@/shared/ui/Input/Input';
 import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
-import { useSelector } from 'react-redux';
 import { useAppDidpatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import {
     DynamicModuleLoader,
@@ -41,7 +41,7 @@ const addCommentForm = memo((props: addCommentFormProps) => {
         (value: string) => {
             dispatch(addCommentActions.setText(value));
         },
-        [dispatch]
+        [dispatch],
     );
 
     const onSendHandler = useCallback(() => {
