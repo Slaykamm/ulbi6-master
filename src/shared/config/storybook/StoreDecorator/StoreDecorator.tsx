@@ -1,14 +1,11 @@
 /* eslint-disable no-undef */
 import { Story } from '@storybook/react';
 import { StateSchema, StoreProvider } from '@/app/providers/StoreProvider';
-import { articleDetailsReducer } from '@/entitles/Article/model/slice/articleDetailsSlice';
-// eslint-disable-next-line ulbi-tv-plugin/public-api-imports
-import { addCommentReducer } from '@/features/addCommentForm/model/slices/addCommentFormSlice';
-// eslint-disable-next-line ulbi-tv-plugin/public-api-imports
-import { loginReducer } from '@/features/AuthByUsername/model/slice/loginSlice';
-// eslint-disable-next-line ulbi-tv-plugin/public-api-imports
-import { profileReducer } from '@/features/editableProfileCard/model/slice/ProfileSlice';
+import { addCommentReducer } from '@/features/addCommentForm/testing';
+import { profileReducer } from '@/features/editableProfileCard/testing';
 import { ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { loginReducer } from '@/features/AuthByUsername/testing';
+import { articleDetailsReducer } from '@/entitles/Article/testing';
 
 const defaulAsyncReducers: ReducersList = {
     loginForm: loginReducer,
