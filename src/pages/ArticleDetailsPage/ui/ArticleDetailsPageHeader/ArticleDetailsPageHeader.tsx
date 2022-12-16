@@ -7,8 +7,7 @@ import { getUserAuthData } from '@/entitles/User';
 import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { HStack } from '@/shared/ui/Stack';
-import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
-import { getCanEditArticle } from '../../model/selectors/article';
+import { RoutePath } from '@/shared/const/router';
 
 interface ArticleDetailsPageHeaderProps {
     className?: string;
