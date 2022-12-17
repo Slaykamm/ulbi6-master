@@ -5,9 +5,9 @@ import { TabItem, Tabs } from '@/shared/ui/Tabs';
 import { ArticleType } from '@/entitles/Article/model/consts/articleConsts';
 
 interface ArticleTypeTabsProps {
-   className?: string;
-   value: ArticleType;
-   onChangeType: (type: ArticleType) => void;
+    className?: string;
+    value: ArticleType;
+    onChangeType: (type: ArticleType) => void;
 
 }
 
@@ -39,7 +39,7 @@ export const ArticleTypeTabs = memo((props: ArticleTypeTabsProps) => {
         },
     ], [t]);
 
-    const onTabClick = useCallback((tab:TabItem) => {
+    const onTabClick = useCallback((tab: TabItem) => {
         onChangeType(tab.value as ArticleType);
     }, [onChangeType]);
 
