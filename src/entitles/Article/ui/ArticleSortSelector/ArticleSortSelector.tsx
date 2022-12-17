@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { memo, useCallback, useMemo } from 'react';
+import { memo, useMemo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Select, SelectOption } from '@/shared/ui/Select';
 import { SortOrder } from '@/shared/types';
@@ -7,11 +7,11 @@ import cls from './ArticleSortSelector.module.scss';
 import { ArticleSortField } from '@/entitles/Article/model/consts/articleConsts';
 
 interface ArticleSortSelectorProps {
-   className?: string;
-   sort: ArticleSortField;
-   order: SortOrder;
-   onChangeOrder: (newOrder: SortOrder) => void;
-   onChangeSort: (newSort: ArticleSortField) => void;
+    className?: string;
+    sort: ArticleSortField;
+    order: SortOrder;
+    onChangeOrder: (newOrder: SortOrder) => void;
+    onChangeSort: (newSort: ArticleSortField) => void;
 }
 
 export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
@@ -25,7 +25,7 @@ export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
 
     const { t } = useTranslation();
 
-    const orderOptions = useMemo<SelectOption[]>(() => [
+    const orderOptions = useMemo<SelectOption<SortOrder>[]>(() => [
         {
             value: 'asc',
             content: t('возрастанию'),
@@ -36,7 +36,7 @@ export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
         },
     ], [t]);
 
-    const sortFieldOptions = useMemo<SelectOption[]>(() => [
+    const sortFieldOptions = useMemo<SelectOption<ArticleSortField>[]>(() => [
         {
             value: ArticleSortField.CREATED,
             content: t('дате создания'),
@@ -51,27 +51,27 @@ export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
         },
     ], [t]);
 
-    const changeSortHandler = useCallback((newSort: string) => {
-        onChangeSort(newSort as ArticleSortField);
-    }, [onChangeSort]);
+    // const changeSortHandler = useCallback((newSort: string) => {
+    //     onChangeSort(newSort as ArticleSortField);
+    // }, [onChangeSort]);
 
-    const changeOrderHandler = useCallback((newOrder: string) => {
-        onChangeOrder(newOrder as SortOrder);
-    }, [onChangeOrder]);
+    // const changeOrderHandler = useCallback((newOrder: string) => {
+    //     onChangeOrder(newOrder as SortOrder);
+    // }, [onChangeOrder]);
 
     return (
         <div className={classNames(cls.ArticleSortSelector, {}, [className])}>
-            <Select
+            <Select<ArticleSortField>
                 options={sortFieldOptions}
                 label={t('Сортировать ПО')}
                 value={sort}
-                onChange={changeSortHandler}
+                onChange={onChangeSort}
             />
             <Select
                 options={orderOptions}
                 label={t('по')}
                 value={order}
-                onChange={changeOrderHandler}
+                onChange={onChangeOrder}
                 className={cls.order}
             />
 
