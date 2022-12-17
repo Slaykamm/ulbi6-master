@@ -6,7 +6,7 @@ import { getArticleDetailsData } from '@/entitles/Article';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { HStack } from '@/shared/ui/Stack';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteArticleEdit, getRouteArticles } from '@/shared/const/router';
 import { getCanEditArticle } from '../../model/selectors/article';
 
 interface ArticleDetailsPageHeaderProps {
@@ -22,12 +22,15 @@ export const ArticleDetailsPageHeader = memo(
         const canEdit = useSelector(getCanEditArticle);
 
         const onBackToList = useCallback(() => {
-            navigate(RoutePath.articles);
+            navigate(getRouteArticles());
         }, [navigate]);
 
         const onEditArticle = useCallback(() => {
-            navigate(`${RoutePath.article_details}${article?.id}/edit`);
-        }, [navigate, article?.id]);
+            if (!article) {
+                return;
+            }
+            navigate(getRouteArticleEdit(article.id));
+        }, [article, navigate]);
 
         return (
             <HStack
