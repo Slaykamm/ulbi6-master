@@ -9,11 +9,11 @@ import {
     ReducersList,
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDidpatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { Avatar } from '@/shared/ui/Avatar/Avatar';
-import { Icon } from '@/shared/ui/Icon/Icon';
+import { Avatar } from '@/shared/ui/Avatar';
+import { Icon } from '@/shared/ui/Icon';
 import { Skeleton } from '@/shared/ui/Skeleton';
 import { HStack, VStack } from '@/shared/ui/Stack';
-import { Text, TextAlign, TextSize } from '@/shared/ui/Text/Text';
+import { Text, TextAlign, TextSize } from '@/shared/ui/Text';
 import {
     getArticleDetailsData,
     getArticleDetailsError,

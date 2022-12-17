@@ -6,7 +6,7 @@ import { useAppDidpatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { ArticleList } from '@/entitles/Article';
-import { Text } from '@/shared/ui/Text/Text';
+import { Text } from '@/shared/ui/Text';
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 import { getArticles } from '../../model/slice/articlesPageSlice';
 import {

@@ -5,7 +5,7 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { Currency } from '@/entitles/Currency';
 import { Country } from '@/entitles/Country';
-import { Text, TextTheme } from '@/shared/ui/Text/Text';
+import { Text, TextTheme } from '@/shared/ui/Text';
 import { useAppDidpatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { ProfileCard } from '@/entitles/Profile';
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';

@@ -9,9 +9,9 @@ import {
     ReducersList,
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
-import { Input } from '@/shared/ui/Input/Input';
-import { Text, TextTheme } from '@/shared/ui/Text/Text';
+import { Button, ButtonTheme } from '@/shared/ui/Button';
+import { Input } from '@/shared/ui/Input';
+import { Text, TextTheme } from '@/shared/ui/Text';
 import { getLoginError } from '../../model/selectors/getLoginError/getLoginError';
 import { loginActions, loginReducer } from '../../model/slice/loginSlice';
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
