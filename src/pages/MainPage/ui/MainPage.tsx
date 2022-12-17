@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Page } from '@/widgets/Page';
 import { StarRating } from '@/shared/ui/StarRating';
+import { Counter } from '@/entitles/Counter';
 
 const MainPage = () => {
     const { t } = useTranslation();
@@ -14,7 +15,7 @@ const MainPage = () => {
     return (
         <Page>
             {t('Главная страница')}
-
+            <Counter />
             <StarRating />
 
         </Page>

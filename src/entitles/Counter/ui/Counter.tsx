@@ -1,18 +1,23 @@
 import { useTranslation } from 'react-i18next';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { Button } from '@/shared/ui/Button';
-import { getCounterValue } from '../model/selectors/getCounterValue/getCounterValue';
-import { counterActions } from '../model/slice/counterSlice';
+import { useCounterValue } from '../model/selectors/getCounterValue/getCounterValue';
+import { useCounterActions } from '../model/slice/counterSlice';
 
 export const Counter = () => {
     const dispatch = useDispatch();
-    const counterValue = useSelector(getCounterValue);
+    const counterValue = useCounterValue();
+    const { increment, decrement, add } = useCounterActions();
 
-    const increment = () => {
-        dispatch(counterActions.increment());
+    const handleInc = () => {
+        increment();
     };
-    const decrement = () => {
-        dispatch(counterActions.decrement());
+    const handleDec = () => {
+        decrement();
+    };
+
+    const handleAddFive = () => {
+        add(5);
     };
 
     const { t } = useTranslation();
@@ -26,16 +31,22 @@ export const Counter = () => {
                 {counterValue}
             </h1>
             <Button
-                onClick={() => increment()}
+                onClick={() => handleInc()}
                 data-testid="increment-btn"
             >
                 {t('increment')}
             </Button>
             <Button
-                onClick={() => decrement()}
+                onClick={() => handleDec()}
                 data-testid="decrement-btn"
             >
                 {t('decrement')}
+            </Button>
+            <Button
+                onClick={() => handleAddFive()}
+                data-testid="add5-btn"
+            >
+                {t('add5')}
             </Button>
         </div>
     );
