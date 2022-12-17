@@ -1,12 +1,7 @@
-import { Listbox } from '@headlessui/react';
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Counter } from '@/entitles/Counter';
-import { Input } from '@/shared/ui/Input';
-import { HStack } from '@/shared/ui/Stack';
 import { Page } from '@/widgets/Page';
 import { StarRating } from '@/shared/ui/StarRating';
-import { RatingCard } from '@/entitles/Rating';
 
 const MainPage = () => {
     const { t } = useTranslation();

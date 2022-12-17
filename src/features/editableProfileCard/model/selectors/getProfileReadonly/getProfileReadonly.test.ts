@@ -1,7 +1,5 @@
 /* eslint-disable no-undef */
 import { StateSchema } from '@/app/providers/StoreProvider';
-import { Country } from '@/entitles/Country';
-import { Currency } from '@/entitles/Currency';
 import { getProfileReadonly } from './getProfileReadonly';
 
 describe('getProfileReadonly.test', () => {

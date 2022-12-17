@@ -1,8 +1,6 @@
-import { useEffect } from '@storybook/addons';
-import { memo, useCallback, useState } from 'react';
+import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useDispatch, useSelector, useStore } from 'react-redux';
-import { ReduxStoreWIthManager } from '@/app/providers/StoreProvider';
+import { useSelector } from 'react-redux';
 import { useAppDidpatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import {
     DynamicModuleLoader,

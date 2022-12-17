@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import { Navigate, useLocation } from 'react-router-dom';
 import {
-    getUserAuthData, getUserMounted, getUserRoles, UserRole,
+    getUserAuthData, getUserRoles, UserRole,
 } from '@/entitles/User';
 import { RoutePath } from '@/shared/const/router';
 

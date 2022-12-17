@@ -15,8 +15,6 @@ import { LoginSchema } from '@/features/AuthByUsername';
 import { ProfileSchema } from '@/features/editableProfileCard';
 import { UISchema } from '@/features/UI';
 import {
-    ArticleDetailsPageCommentsRecomendationsSchema,
-    ArticleDetailsPageCommentsSchema,
     ArticleDetailsPageSchema,
 } from '@/pages/ArticleDetailsPage';
 import { articlePageSchema } from '@/pages/ArticlesPage';

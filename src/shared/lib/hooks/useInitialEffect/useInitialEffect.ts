@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-import { callbackify } from 'util';
 
 export function useInitialEffect(callback: () => void) {
     useEffect(() => {

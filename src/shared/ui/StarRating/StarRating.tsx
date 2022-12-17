@@ -1,6 +1,5 @@
 import { useTranslation } from 'react-i18next';
 import { memo, useState } from 'react';
-import { start } from 'repl';
 import cls from './StarRating.module.scss';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Icon } from '../Icon/Icon';
