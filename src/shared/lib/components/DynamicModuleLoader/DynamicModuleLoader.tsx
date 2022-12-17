@@ -2,10 +2,10 @@ import { useTranslation } from 'react-i18next';
 import { ReactNode, useEffect } from 'react';
 import { useDispatch, useStore } from 'react-redux';
 import { Reducer } from '@reduxjs/toolkit';
-import { ReduxStoreWIthManager, StateSchemaKey } from '@/app/providers/StoreProvider/config/StateSchema';
+import { ReduxStoreWIthManager, StateSchema, StateSchemaKey } from '@/app/providers/StoreProvider/config/StateSchema';
 
 export type ReducersList = {
-    [name in StateSchemaKey]?: Reducer;
+    [name in StateSchemaKey]?: Reducer<NonNullable<StateSchema[name]>>;
 }
 
 interface DynamicModuleLoaderProps {

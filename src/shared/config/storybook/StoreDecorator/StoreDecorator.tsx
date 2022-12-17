@@ -6,13 +6,14 @@ import { profileReducer } from '@/features/editableProfileCard/testing';
 import { ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { loginReducer } from '@/features/AuthByUsername/testing';
 import { articleDetailsReducer } from '@/entitles/Article/testing';
+import { articleDetailsPageReducer } from '@/pages/ArticleDetailsPage/testing';
 
 const defaulAsyncReducers: ReducersList = {
     loginForm: loginReducer,
     profile: profileReducer,
     articleDetails: articleDetailsReducer,
     addCommentForm: addCommentReducer,
-    articleDetailsPage: articleDetailsReducer,
+    articleDetailsPage: articleDetailsPageReducer,
 };
 
 // eslint-disable-next-line max-len
