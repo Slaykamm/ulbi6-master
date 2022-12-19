@@ -6,7 +6,7 @@ const ForbiddenPage = () => {
     const { t } = useTranslation('');
 
     return (
-        <Page>
+        <Page data-testid="ForbiddenPage">
             {t('У Вас нет прав для просмотра данной страницы')}
         </Page>
     );
