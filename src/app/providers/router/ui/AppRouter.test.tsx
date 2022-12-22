@@ -36,6 +36,7 @@ describe('app/router/AppRouter', () => {
         componentRender(<AppRouter />, {
             route: getRouteProfile('1'),
             initialState: {
+                // @ts-ignore
                 user: { _inited: true, authData: {} },
             },
         });
@@ -48,6 +49,7 @@ describe('app/router/AppRouter', () => {
         componentRender(<AppRouter />, {
             route: getRouteAdminPanel(),
             initialState: {
+                // @ts-ignore
                 user: { _inited: true, authData: {} },
             },
         });
@@ -60,6 +62,7 @@ describe('app/router/AppRouter', () => {
         componentRender(<AppRouter />, {
             route: getRouteAdminPanel(),
             initialState: {
+                // @ts-ignore
                 user: { _inited: true, authData: { roles: [UserRole.ADMIN] } },
             },
         });
