@@ -586,6 +586,15 @@
         "MANAGER"
       ],
       "avatar": "https://fresh.acit-c.ru/templates/yootheme/cache/manager-7c762b12.jpeg"
+    },
+    {
+      "id": "4",
+      "username": "testuser",
+      "password": "123",
+      "roles": [
+        "ADMIN"
+      ],
+      "avatar": "https://fresh.acit-c.ru/templates/yootheme/cache/manager-7c762b12.jpeg"
     }
   ],
   "profile": [
