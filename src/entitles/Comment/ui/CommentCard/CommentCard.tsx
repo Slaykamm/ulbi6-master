@@ -26,7 +26,12 @@ export const CommentCard = memo((props: CommentCardProps) => {
                     cls.loading,
                 ])}
             >
-                <VStack gap="16" className={cls.heander}>
+                <VStack
+                    // eslint-disable-next-line i18next/no-literal-string
+                    date-testid="CommentCard.Loading"
+                    gap="16"
+                    className={cls.heander}
+                >
                     <Skeleton width={30} height={30} border="50%" />
                     <Skeleton
                         height={16}
@@ -48,6 +53,7 @@ export const CommentCard = memo((props: CommentCardProps) => {
             gap="8"
             max
             className={classNames(cls.CommentCard, {}, [className])}
+            data-testid="CommentCard.Content"
         >
             <AppLink
                 to={getRouteProfile(comment.user.id)}

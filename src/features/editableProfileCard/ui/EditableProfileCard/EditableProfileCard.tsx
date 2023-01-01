@@ -5,7 +5,6 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { Currency } from '@/entitles/Currency';
 import { Country } from '@/entitles/Country';
-import { Text, TextTheme } from '@/shared/ui/Text';
 import { useAppDidpatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { ProfileCard } from '@/entitles/Profile';
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
@@ -26,7 +25,6 @@ import {
     getProfileForm,
     getProfileIsLoading,
     getProfileReadonly,
-    getProfileValidateError,
     ValidateProfileError,
 } from '../..';
 // import { ValidateProfileError } from '@/features/editableProfileCard/model/types/editableProfileCardSchema';
@@ -70,7 +68,7 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
     const error = useSelector(getProfileError);
     const isLoading = useSelector(getProfileIsLoading);
     const readonly = useSelector(getProfileReadonly);
-    const validateErrors = useSelector(getProfileValidateError);
+    const validateErrors = []; // useSelector(getProfileValidateError);
 
     useInitialEffect(() => {
         if (id) {
@@ -147,7 +145,7 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
                 max
             >
                 <EditableProfileCardHeader />
-                {validateErrors?.length
+                {/* {validateErrors?.length
                     && validateErrors.map((err) => (
                         <Text
                             key={err}
@@ -155,7 +153,7 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
                             text={validateErrorTranslations[err]}
                             data-testid="EditableProfileCard.Error"
                         />
-                    ))}
+                    ))} */}
                 <ProfileCard
                     data={formData}
                     error={error}
