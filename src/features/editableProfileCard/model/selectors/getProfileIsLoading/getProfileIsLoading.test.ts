@@ -7,7 +7,6 @@ describe('getProfileIsLoading.test', () => {
         const state: DeepPartial<StateSchema> = {
             profile: {
                 isLoading: true,
-
             },
         };
         expect(getProfileIsLoading(state as StateSchema)).toEqual(true);

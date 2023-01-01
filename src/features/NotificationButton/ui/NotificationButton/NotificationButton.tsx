@@ -10,13 +10,11 @@ import NotificationIcon from '@/shared/assets/icons/notification-20-20.svg';
 import { Drawer } from '@/shared/ui/Drawer';
 
 interface NotificationButtonProps {
-  className?: string;
+    className?: string;
 }
 
 export const NotificationButton = memo((props: NotificationButtonProps) => {
-    const {
-        className,
-    } = props;
+    const { className } = props;
 
     const [isOpen, setIsOpen] = useState<boolean>(false);
 
@@ -38,7 +36,9 @@ export const NotificationButton = memo((props: NotificationButtonProps) => {
         <div>
             <BrowserView>
                 <Popover
-                    className={classNames(cls.NotificationButton, {}, [className])}
+                    className={classNames(cls.NotificationButton, {}, [
+                        className,
+                    ])}
                     direction="bottom left"
                     trigger={trigger}
                 >
@@ -47,10 +47,7 @@ export const NotificationButton = memo((props: NotificationButtonProps) => {
             </BrowserView>
             <MobileView>
                 {trigger}
-                <Drawer
-                    isOpen={isOpen}
-                    onClose={onCloseDrawer}
-                >
+                <Drawer isOpen={isOpen} onClose={onCloseDrawer}>
                     <NotificationList />
                 </Drawer>
             </MobileView>

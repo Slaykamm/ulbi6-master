@@ -5,7 +5,7 @@ interface UseHoverBink {
     onMouseLeave: () => void;
 }
 
-type UseHoverResult = [boolean, UseHoverBink]
+type UseHoverResult = [boolean, UseHoverBink];
 
 export const useHover = () => {
     const [isHover, setIsHover] = useState(false);
@@ -24,7 +24,8 @@ export const useHover = () => {
             {
                 onMouseEnter,
                 onMouseLeave,
-            }],
+            },
+        ],
         [isHover, onMouseEnter, onMouseLeave],
     );
 };

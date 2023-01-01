@@ -4,7 +4,7 @@ import { ArticleType } from '../consts/articleConsts';
 export enum ArticleBlockType {
     CODE = 'CODE',
     IMAGE = 'IMAGE',
-    TEXT = 'TEXT'
+    TEXT = 'TEXT',
 }
 
 export interface ArticleBlockBase {
@@ -13,8 +13,8 @@ export interface ArticleBlockBase {
 }
 
 export interface ArticleCodeBlock extends ArticleBlockBase {
-    type: ArticleBlockType.CODE
-    code: string
+    type: ArticleBlockType.CODE;
+    code: string;
 }
 
 export interface ArticleImageBlock extends ArticleBlockBase {
@@ -29,7 +29,10 @@ export interface ArticleTextBlock extends ArticleBlockBase {
     title?: string;
 }
 
-export type ArticleBlocks = ArticleCodeBlock | ArticleImageBlock | ArticleTextBlock;
+export type ArticleBlocks =
+    | ArticleCodeBlock
+    | ArticleImageBlock
+    | ArticleTextBlock;
 
 export interface Article {
     id: string;

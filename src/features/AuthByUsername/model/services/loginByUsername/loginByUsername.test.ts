@@ -45,10 +45,15 @@ describe('loginByUsername.test.ts.test', () => {
         const thunk = new TestAsyncThunk(loginByUsername);
         thunk.api.post.mockReturnValue(Promise.resolve({ data: userValue }));
 
-        const result = await thunk.callThunk({ username: '123', password: '123' });
+        const result = await thunk.callThunk({
+            username: '123',
+            password: '123',
+        });
 
         // дожидаемся результата вызова асинкФанка, что вернет нам экшн со значениями.
-        expect(thunk.dispatch).toHaveBeenCalledWith(userActions.setAuthData(userValue));
+        expect(thunk.dispatch).toHaveBeenCalledWith(
+            userActions.setAuthData(userValue),
+        );
         expect(thunk.dispatch).toHaveBeenCalledTimes(3);
         expect(thunk.api.post).toHaveBeenCalled();
         expect(result.meta.requestStatus).toBe('fulfilled');
@@ -59,7 +64,10 @@ describe('loginByUsername.test.ts.test', () => {
         // тут в замоканный аксиос мокаем вызов метода пост на значение. Т.к. возвращает промис - резолвим
         const thunk = new TestAsyncThunk(loginByUsername);
         thunk.api.post.mockReturnValue(Promise.resolve({ status: 403 }));
-        const result = await thunk.callThunk({ username: '123', password: '123' });
+        const result = await thunk.callThunk({
+            username: '123',
+            password: '123',
+        });
         // дожидаемся результата вызова асинкФанка, что вернет нам экшн со значениями.
         expect(thunk.dispatch).toHaveBeenCalledTimes(2);
         expect(thunk.api.post).toHaveBeenCalled();

@@ -7,7 +7,10 @@ import { Currency } from '@/entitles/Currency';
 import { Country } from '@/entitles/Country';
 import { useAppDidpatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { ProfileCard } from '@/entitles/Profile';
-import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import {
+    DynamicModuleLoader,
+    ReducersList,
+} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { VStack } from '@/shared/ui/Stack';
 // import {
 //     getProfileError,
@@ -44,10 +47,7 @@ const reducers: ReducersList = {
 };
 
 export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
-    const {
-        id,
-        className,
-    } = props;
+    const { id, className } = props;
     const { t } = useTranslation('profile');
 
     const validateErrorTranslations = {
@@ -139,11 +139,7 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers}>
-            <VStack
-                gap="8"
-                className={classNames('', {}, [className])}
-                max
-            >
+            <VStack gap="8" className={classNames('', {}, [className])} max>
                 <EditableProfileCardHeader />
                 {/* {validateErrors?.length
                     && validateErrors.map((err) => (
@@ -170,6 +166,5 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
                 />
             </VStack>
         </DynamicModuleLoader>
-
     );
 });

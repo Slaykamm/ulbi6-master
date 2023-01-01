@@ -3,9 +3,7 @@ import path from 'path';
 import { buildCssLoader } from '../build/loaders/buildCssLoader';
 
 export default {
-    stories: [
-        '../../src/**/*.stories.@(js|jsx|ts|tsx)',
-    ],
+    stories: ['../../src/**/*.stories.@(js|jsx|ts|tsx)'],
     addons: [
         '@storybook/addon-links',
         {

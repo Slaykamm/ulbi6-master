@@ -18,7 +18,6 @@ describe('getProfileData.test', () => {
         const state: DeepPartial<StateSchema> = {
             profile: {
                 data,
-
             },
         };
         expect(getProfileData(state as StateSchema)).toEqual(data);

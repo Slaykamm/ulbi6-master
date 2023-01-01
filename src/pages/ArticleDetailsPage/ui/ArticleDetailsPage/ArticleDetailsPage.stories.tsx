@@ -2,7 +2,10 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
-import { Article, ArticleBlockType } from '@/entitles/Article/model/types/article';
+import {
+    Article,
+    ArticleBlockType,
+} from '@/entitles/Article/model/types/article';
 import ArticleDetailsPage from './ArticleDetailsPage';
 import { ArticleType } from '@/entitles/Article';
 
@@ -89,12 +92,16 @@ const article: Article = {
     ],
 };
 
-const Template: ComponentStory<typeof ArticleDetailsPage> = (args) => <ArticleDetailsPage {...args} />;
+const Template: ComponentStory<typeof ArticleDetailsPage> = (args) => (
+    <ArticleDetailsPage {...args} />
+);
 
 export const Primary = Template.bind({});
 Primary.args = {};
-Primary.decorators = [StoreDecorator({
-    articleDetails: {
-        data: article,
-    },
-})];
+Primary.decorators = [
+    StoreDecorator({
+        articleDetails: {
+            data: article,
+        },
+    }),
+];

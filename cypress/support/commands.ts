@@ -20,4 +20,4 @@ Cypress.Commands.addAll(commentsCommands);
 
 //     }
 // })
-export { };
+export {};

@@ -4,18 +4,14 @@ import { CounterSchema } from '../../type/counterSchema';
 describe('getCounterValue', () => {
     test('decrement', () => {
         const state: CounterSchema = { value: 2 };
-        expect(
-            counterReducer(state, counterActions.decrement()),
-        )
-
-            .toEqual({ value: 1 });
+        expect(counterReducer(state, counterActions.decrement())).toEqual({
+            value: 1,
+        });
     });
     test('increment', () => {
         const state: CounterSchema = { value: 2 };
-        expect(
-            counterReducer(state, counterActions.decrement()),
-        )
-
-            .toEqual({ value: 1 });
+        expect(counterReducer(state, counterActions.decrement())).toEqual({
+            value: 1,
+        });
     });
 });

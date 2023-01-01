@@ -14,9 +14,7 @@ import { AddCommentFormSchema } from '@/features/addCommentForm';
 import { LoginSchema } from '@/features/AuthByUsername';
 import { ProfileSchema } from '@/features/editableProfileCard';
 import { UISchema } from '@/features/UI';
-import {
-    ArticleDetailsPageSchema,
-} from '@/pages/ArticleDetailsPage';
+import { ArticleDetailsPageSchema } from '@/pages/ArticleDetailsPage';
 import { articlePageSchema } from '@/pages/ArticlesPage';
 import { rtkApi } from '@/shared/api/rtkApi';
 
@@ -43,7 +41,7 @@ export interface ReducerManager {
     getReducerMap: () => ReducersMapObject<StateSchema>;
     reduce: (
         state: StateSchema,
-        action: AnyAction
+        action: AnyAction,
     ) => CombinedState<StateSchema>;
     add: (key: StateSchemaKey, reducer: Reducer) => void;
     remove: (key: StateSchemaKey) => void;

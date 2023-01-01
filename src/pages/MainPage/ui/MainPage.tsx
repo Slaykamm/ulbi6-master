@@ -13,14 +13,10 @@ const MainPage = () => {
     };
 
     return (
-        <Page
-            data-testid="MainPage"
-        >
-
+        <Page data-testid="MainPage">
             {t('Главная страница')}
             <Counter />
             <StarRating />
-
         </Page>
     );
 };

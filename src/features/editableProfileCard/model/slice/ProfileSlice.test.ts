@@ -1,5 +1,8 @@
 /* eslint-disable no-undef */
-import { ProfileSchema, ValidateProfileError } from '../types/editableProfileCardSchema';
+import {
+    ProfileSchema,
+    ValidateProfileError,
+} from '../types/editableProfileCardSchema';
 import { profileActions, profileReducer } from './ProfileSlice';
 
 describe('ProfileSlice.test', () => {
@@ -13,10 +16,11 @@ describe('ProfileSlice.test', () => {
         };
         // readonly: true,
         expect(
-            profileReducer(state as ProfileSchema, profileActions.setReadonly(true)),
-        )
-
-            .toEqual(setReadonlyValue);
+            profileReducer(
+                state as ProfileSchema,
+                profileActions.setReadonly(true),
+            ),
+        ).toEqual(setReadonlyValue);
     });
 
     test('test set cancelEdit', () => {
@@ -28,22 +32,22 @@ describe('ProfileSlice.test', () => {
         // readonly: true,
         expect(
             profileReducer(state as ProfileSchema, profileActions.cancelEdit()),
-        )
-            .toEqual(
-                {
-                    readonly: true,
-                    validateError: [],
-                    form: undefined,
-                },
-            );
+        ).toEqual({
+            readonly: true,
+            validateError: [],
+            form: undefined,
+        });
     });
 
     test('test set undate', () => {
         const state: DeepPartial<ProfileSchema> = { form: { username: '123' } };
         expect(
-            profileReducer(state as ProfileSchema, profileActions.updateProfile({
-                username: '12345',
-            })),
+            profileReducer(
+                state as ProfileSchema,
+                profileActions.updateProfile({
+                    username: '12345',
+                }),
+            ),
         ).toEqual({ form: { username: '12345' } });
     });
 

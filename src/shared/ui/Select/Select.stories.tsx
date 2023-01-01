@@ -20,5 +20,4 @@ Primary.args = {
         { value: '3', content: '3333333333333' },
         { value: '4', content: '44444444444' },
     ],
-
 };

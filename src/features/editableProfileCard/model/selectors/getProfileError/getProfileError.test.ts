@@ -7,7 +7,6 @@ describe('getProfileData.test', () => {
         const state: DeepPartial<StateSchema> = {
             profile: {
                 error: 'ERRROR',
-
             },
         };
         expect(getProfileError(state as StateSchema)).toEqual('ERRROR');

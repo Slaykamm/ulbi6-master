@@ -6,41 +6,41 @@ import ProfileIcon from '@/shared/assets/icons/profile-20-20.svg';
 import ArticleIcon from '@/shared/assets/icons/calendar-20-20.svg';
 import { SidebarItemType } from '../types/sidebar';
 import {
-    getRouteAbout, getRouteArticles, getRouteMain, getRouteProfile,
+    getRouteAbout,
+    getRouteArticles,
+    getRouteMain,
+    getRouteProfile,
 } from '@/shared/const/router';
 
-export const getSidebarItems = createSelector(
-    getUserAuthData,
-    (userData) => {
-        const sidebarItemsList: SidebarItemType[] = [
+export const getSidebarItems = createSelector(getUserAuthData, (userData) => {
+    const sidebarItemsList: SidebarItemType[] = [
+        {
+            path: getRouteMain(),
+            text: 'Главная',
+            Icon: MainIcon,
+        },
+        {
+            path: getRouteAbout(),
+            text: 'О сайте',
+            Icon: AboutIcon,
+        },
+    ];
+    if (userData) {
+        sidebarItemsList.push(
             {
-                path: getRouteMain(),
-                text: 'Главная',
-                Icon: MainIcon,
+                // eslint-disable-next-line no-unsafe-optional-chaining
+                path: getRouteProfile(userData?.id),
+                text: 'Профиль',
+                Icon: ProfileIcon,
+                authOnly: true,
             },
             {
-                path: getRouteAbout(),
-                text: 'О сайте',
-                Icon: AboutIcon,
+                path: getRouteArticles(),
+                text: 'Статьи',
+                Icon: ArticleIcon,
+                authOnly: true,
             },
-        ];
-        if (userData) {
-            sidebarItemsList.push(
-                {
-                    // eslint-disable-next-line no-unsafe-optional-chaining
-                    path: getRouteProfile(userData?.id),
-                    text: 'Профиль',
-                    Icon: ProfileIcon,
-                    authOnly: true,
-                },
-                {
-                    path: getRouteArticles(),
-                    text: 'Статьи',
-                    Icon: ArticleIcon,
-                    authOnly: true,
-                },
-            );
-        }
-        return sidebarItemsList;
-    },
-);
+        );
+    }
+    return sidebarItemsList;
+});

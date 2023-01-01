@@ -1,6 +1,9 @@
 import { memo, useCallback } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import {
+    DynamicModuleLoader,
+    ReducersList,
+} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDidpatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Page } from '@/widgets/Page';
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
@@ -18,9 +21,7 @@ const reducers: ReducersList = {
 };
 
 const ArticlesPage = (props: ArticlesPageProps) => {
-    const {
-        className,
-    } = props;
+    const { className } = props;
     const dispatch = useAppDidpatch();
     const onLoadNextPart = useCallback(() => {
         dispatch(fetchNextArticlesPage());
@@ -37,7 +38,6 @@ const ArticlesPage = (props: ArticlesPageProps) => {
                 <ArticleInfiniteList className={cls.list} />
             </Page>
         </DynamicModuleLoader>
-
     );
 };
 

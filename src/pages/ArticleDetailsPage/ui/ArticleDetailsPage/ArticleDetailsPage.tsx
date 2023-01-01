@@ -47,7 +47,6 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
                     <ArticleRating articleId={id} />
                     <ArticleRecommendationsList />
                     <ArticleDetailsComments id={id} />
-
                 </VStack>
             </Page>
         </DynamicModuleLoader>

@@ -14,12 +14,12 @@ export default {
 } as ComponentMeta<typeof addCommentForm>;
 
 // @ts-ignore
-const Template: ComponentStory<typeof addCommentForm> = (args) => <addCommentForm {...args} />;
+const Template: ComponentStory<typeof addCommentForm> = (args) => (
+    <addCommentForm {...args} />
+);
 
 export const Normal = Template.bind({});
 Normal.args = {
     onSendComment: action('onSendComment'),
 };
-Normal.decorators = [
-    StoreDecorator({}),
-];
+Normal.decorators = [StoreDecorator({})];

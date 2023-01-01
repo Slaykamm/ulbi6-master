@@ -1,0 +1,7 @@
+# Ignore artifactc:
+build
+coverage
+node_modules
+*.html
+*.css
+*.scss

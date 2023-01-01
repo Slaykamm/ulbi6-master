@@ -23,9 +23,7 @@ const article = {
         username: 'admin',
         avatar: 'https://www.pngmart.com/files/12/Hello-Summer-Word-Transparent-Background.png',
     },
-    type: [
-        'Life',
-    ],
+    type: ['Life'],
     blocks: [
         {
             id: '1',
@@ -88,7 +86,9 @@ const article = {
     ],
 } as any;
 
-const Template: ComponentStory<typeof ArticleListItem> = (args) => <ArticleListItem {...args} />;
+const Template: ComponentStory<typeof ArticleListItem> = (args) => (
+    <ArticleListItem {...args} />
+);
 
 export const Big = Template.bind({});
 Big.args = {

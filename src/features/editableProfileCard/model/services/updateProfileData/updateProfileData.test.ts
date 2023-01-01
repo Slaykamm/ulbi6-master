@@ -44,9 +44,7 @@ describe('updateProfileData.test.ts.test', () => {
         thunk.api.put.mockReturnValue(Promise.resolve({ status: 403 }));
         const result = await thunk.callThunk();
         expect(result.meta.requestStatus).toBe('rejected');
-        expect(result.payload).toEqual([
-            ValidateProfileError.SERVER_ERROR,
-        ]);
+        expect(result.payload).toEqual([ValidateProfileError.SERVER_ERROR]);
     });
     test('updateProfileData.error ', async () => {
         // тут в замоканный аксиос мокаем вызов метода пост на значение. Т.к. возвращает промис - резолвим

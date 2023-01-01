@@ -72,6 +72,8 @@ export const Flex = (props: FlexProps) => {
     };
 
     return (
-        <div className={classNames(cls.Flex, mods, classes)} {...otherProps}>{children}</div>
+        <div className={classNames(cls.Flex, mods, classes)} {...otherProps}>
+            {children}
+        </div>
     );
 };

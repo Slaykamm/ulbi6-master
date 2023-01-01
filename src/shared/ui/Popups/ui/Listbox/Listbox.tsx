@@ -47,7 +47,10 @@ export function Listbox(props: ListboxProps) {
             <HListBox
                 disabled={readOnly}
                 as="div"
-                className={classNames(cls.Listbox, {}, [className, popupCls.popup])}
+                className={classNames(cls.Listbox, {}, [
+                    className,
+                    popupCls.popup,
+                ])}
                 value={value}
                 onChange={onChange}
             >

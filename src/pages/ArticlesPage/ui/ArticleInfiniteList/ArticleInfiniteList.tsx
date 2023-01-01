@@ -15,13 +15,11 @@ import {
 } from '../../model/selectors/articlesPageSelectors';
 
 interface ArticleInfiniteListProps {
-   className?: string;
+    className?: string;
 }
 
 export const ArticleInfiniteList = memo((props: ArticleInfiniteListProps) => {
-    const {
-        className,
-    } = props;
+    const { className } = props;
 
     const { t } = useTranslation();
     const articles = useSelector(getArticles.selectAll);

@@ -2,7 +2,11 @@
 import { StateSchema } from '@/app/providers/StoreProvider';
 import { Article, ArticleBlockType } from '../types/article';
 import { ArticleType } from '../consts/articleConsts';
-import { getArticleDetailsData, getArticleDetailsError, getArticleDetailsIsLoading } from './articleDetails';
+import {
+    getArticleDetailsData,
+    getArticleDetailsError,
+    getArticleDetailsIsLoading,
+} from './articleDetails';
 
 describe('getArticleDetailsData.test', () => {
     test('should return article', () => {
@@ -83,7 +87,6 @@ describe('getArticleDetailsData.test', () => {
         const state: DeepPartial<StateSchema> = {
             articleDetails: {
                 data: article,
-
             },
         };
         expect(getArticleDetailsData(state as StateSchema)).toEqual(article);
@@ -98,7 +101,6 @@ describe('getArticleDetailsData.test', () => {
         const state: DeepPartial<StateSchema> = {
             articleDetails: {
                 isLoading: true,
-
             },
         };
         expect(getArticleDetailsIsLoading(state as StateSchema)).toEqual(true);
@@ -108,7 +110,6 @@ describe('getArticleDetailsData.test', () => {
         const state: DeepPartial<StateSchema> = {
             articleDetails: {
                 error: 'error',
-
             },
         };
         expect(getArticleDetailsError(state as StateSchema)).toEqual('error');

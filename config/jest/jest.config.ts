@@ -10,27 +10,13 @@ export default {
         __IS_DEV__: true,
         __API__: '',
         __PROJECT__: 'jest',
-
     },
     clearMocks: true,
     testEnvironment: 'jsdom',
-    coveragePathIgnorePatterns: [
-        '\\\\node_modules\\\\',
-    ],
-    moduleFileExtensions: [
-        'js',
-        'jsx',
-        'ts',
-        'tsx',
-        'json',
-        'node',
-    ],
-    moduleDirectories: [
-        'node_modules',
-    ],
-    modulePaths: [
-        '<rootDir>src',
-    ],
+    coveragePathIgnorePatterns: ['\\\\node_modules\\\\'],
+    moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx', 'json', 'node'],
+    moduleDirectories: ['node_modules'],
+    modulePaths: ['<rootDir>src'],
     testMatch: [
         // Обнаружил разницу между МАК ОС и ВИНДОУС!!!
         '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
@@ -44,13 +30,16 @@ export default {
     },
     reporters: [
         'default',
-        ['<rootDir>node_modules/jest-html-reporters', {
-            pageTitle: 'Test Report',
-            publicPath: '<rootDir>/reports/unit',
-            filename: 'report.html',
-            // openReport: true,
-            inlineSource: true,
-        }],
+        [
+            '<rootDir>node_modules/jest-html-reporters',
+            {
+                pageTitle: 'Test Report',
+                publicPath: '<rootDir>/reports/unit',
+                filename: 'report.html',
+                // openReport: true,
+                inlineSource: true,
+            },
+        ],
     ],
     // Indicates whether the coverage information should be collected while executing the test
     // collectCoverage: false,

@@ -3,18 +3,13 @@ export { ValidateProfileError } from './model/types/editableProfileCardSchema';
 
 // export { EditableProfileCard } from './ui/EditableProfileCard/EditableProfileCard';
 
-export {
-    profileActions,
-    profileReducer,
-} from './model/slice/ProfileSlice';
+export { profileActions, profileReducer } from './model/slice/ProfileSlice';
 
 // export {
 //     fetchProfileData,
 // } from './model/services/fetchProfileData/fetchProfileData';
 
-export {
-    updateProfileData,
-} from './model/services/updateProfileData/updateProfileData';
+export { updateProfileData } from './model/services/updateProfileData/updateProfileData';
 
 export { getProfileIsLoading } from './model/selectors/getProfileIsLoading/getProfileIsLoading';
 export { getProfileData } from './model/selectors/getProfileData/getProfileData';

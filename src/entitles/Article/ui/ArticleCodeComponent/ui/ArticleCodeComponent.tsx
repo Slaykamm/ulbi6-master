@@ -4,21 +4,20 @@ import { Code } from '@/shared/ui/Code';
 import { ArticleCodeBlock } from '../../../model/types/article';
 
 interface ArticleImageCodeComponentProps {
-   className?: string;
-   block: ArticleCodeBlock;
+    className?: string;
+    block: ArticleCodeBlock;
 }
 
-export const ArticleCodeComponent = memo((props: ArticleImageCodeComponentProps) => {
-    const {
-        className,
-        block,
-    } = props;
+export const ArticleCodeComponent = memo(
+    (props: ArticleImageCodeComponentProps) => {
+        const { className, block } = props;
 
-    const { t } = useTranslation();
+        const { t } = useTranslation();
 
-    return (
-        <div>
-            <Code text={block.code} />
-        </div>
-    );
-});
+        return (
+            <div>
+                <Code text={block.code} />
+            </div>
+        );
+    },
+);
